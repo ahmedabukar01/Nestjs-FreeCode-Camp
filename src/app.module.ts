@@ -12,8 +12,9 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({isGlobal: true}),
     AuthModule, 
     BookmarkModule,
-     UserModule, 
-     PrismaModule],
+    UserModule, 
+    PrismaModule,
+    ],
   controllers: [AppController],
   providers: [AppService],
 })
