@@ -5,15 +5,15 @@ import { Request } from 'express';
 import { JwtGuard } from 'src/auth/Guards/jwt.guard';
 import { User } from 'src/auth/decorator/user.decorator';
 
+@UseGuards(JwtGuard)
 @Controller('users')
 export class UserController {
     constructor(private userService: UserService){
 
     }
   
-    @UseGuards(JwtGuard)
     @Get('me')
-    getMe(@User('user') user){
+    getMe(@User() user){
         console.log(user)
         return this.userService.getMe()
     }
